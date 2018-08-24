@@ -6,7 +6,7 @@
 //  Copyright © 2018 Le Duy Bach. All rights reserved.
 //
 
-class SeeNotesPresenter : RepositoryDelegate<Note> { 
+class SeeNotesPresenter : RepositoryDelegate<Note>, ViewToSeeNotesPresenter { 
     let repo: IRepository<Note>?
     let view: SeeNotesView?
     let flowController: IFlowController?

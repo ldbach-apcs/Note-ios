@@ -21,6 +21,7 @@
 		14883C4D212FFB1200871F58 /* RepoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C4C212FFB1200871F58 /* RepoFactory.swift */; };
 		14883C4F212FFB1E00871F58 /* NoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C4E212FFB1E00871F58 /* NoteRepository.swift */; };
 		14883C512130055100871F58 /* SeeNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C502130055100871F58 /* SeeNotesViewController.swift */; };
+		14883C5521300D9900871F58 /* ViewToSeeNotesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C5421300D9900871F58 /* ViewToSeeNotesPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		14883C4C212FFB1200871F58 /* RepoFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoFactory.swift; sourceTree = "<group>"; };
 		14883C4E212FFB1E00871F58 /* NoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRepository.swift; sourceTree = "<group>"; };
 		14883C502130055100871F58 /* SeeNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeNotesViewController.swift; sourceTree = "<group>"; };
+		14883C5421300D9900871F58 /* ViewToSeeNotesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToSeeNotesPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				14883C37212FE2C400871F58 /* SeeNotes.ios */,
 				14883C3D212FE54400871F58 /* SeeNotesPresenter.swift */,
+				14883C5421300D9900871F58 /* ViewToSeeNotesPresenter.swift */,
 			);
 			path = SeeNotes;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14883C5521300D9900871F58 /* ViewToSeeNotesPresenter.swift in Sources */,
 				14883C0F212FDF3B00871F58 /* AppDelegate.swift in Sources */,
 				14883C4B212FF43800871F58 /* IOS_FlowController.swift in Sources */,
 				14883C36212FE10E00871F58 /* IRepository.swift in Sources */,

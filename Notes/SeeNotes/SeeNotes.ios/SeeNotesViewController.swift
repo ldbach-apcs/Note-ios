@@ -9,9 +9,9 @@
 import UIKit
 
 class SeeNotesViewController: UIViewController, SeeNotesView {
-    var presenter: SeeNotesPresenter?
+    var presenter: ViewToSeeNotesPresenter?
     
-    func setSeeNotesPresenter(presenter: SeeNotesPresenter) {
+    func setSeeNotesPresenter(presenter: ViewToSeeNotesPresenter?) {
         self.presenter = presenter
     }
 
@@ -22,11 +22,14 @@ class SeeNotesViewController: UIViewController, SeeNotesView {
     func displayError() {
         print("SeeNotesView: Error")
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello world!")
+        setupTableView()
+        presenter?.onViewReady()
     }
-
+    
+    private func setupTableView() {
+        
+    }
 }
