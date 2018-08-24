@@ -7,7 +7,7 @@
 //
 
 import Foundation
-protocol IFlowController {
-    func navigateToAdd()
-    func navigateToList()
+class IFlowController<idType> {
+    func navigateToAdd(itemToEdit id: idType?) {}
+    func navigateToList() {}
 }

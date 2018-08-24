@@ -10,13 +10,13 @@
 		14883C0F212FDF3B00871F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C0E212FDF3B00871F58 /* AppDelegate.swift */; };
 		14883C16212FDF3D00871F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14883C15212FDF3D00871F58 /* Assets.xcassets */; };
 		14883C19212FDF3D00871F58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14883C17212FDF3D00871F58 /* LaunchScreen.storyboard */; };
-		14883C24212FDF3D00871F58 /* RememberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C23212FDF3D00871F58 /* RememberTests.swift */; };
+		14883C24212FDF3D00871F58 /* NoteListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C23212FDF3D00871F58 /* NoteListPresenterTest.swift */; };
 		14883C31212FE02B00871F58 /* IFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C30212FE02B00871F58 /* IFlowController.swift */; };
-		14883C34212FE08700871F58 /* IosFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C33212FE08700871F58 /* IosFlowController.swift */; };
 		14883C36212FE10E00871F58 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C35212FE10E00871F58 /* IRepository.swift */; };
 		14883C3E212FE54400871F58 /* NoteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C3D212FE54400871F58 /* NoteListPresenter.swift */; };
 		14883C41212FE58A00871F58 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C40212FE58A00871F58 /* Note.swift */; };
 		14883C43212FE64B00871F58 /* IListNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C42212FE64B00871F58 /* IListNoteView.swift */; };
+		14883C49212FEFBF00871F58 /* NoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C48212FEFBF00871F58 /* NoteRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +36,14 @@
 		14883C18212FDF3D00871F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14883C1A212FDF3D00871F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14883C1F212FDF3D00871F58 /* RememberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RememberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		14883C23212FDF3D00871F58 /* RememberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberTests.swift; sourceTree = "<group>"; };
+		14883C23212FDF3D00871F58 /* NoteListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListPresenterTest.swift; sourceTree = "<group>"; };
 		14883C25212FDF3D00871F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14883C30212FE02B00871F58 /* IFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFlowController.swift; sourceTree = "<group>"; };
-		14883C33212FE08700871F58 /* IosFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosFlowController.swift; sourceTree = "<group>"; };
 		14883C35212FE10E00871F58 /* IRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepository.swift; sourceTree = "<group>"; };
 		14883C3D212FE54400871F58 /* NoteListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListPresenter.swift; sourceTree = "<group>"; };
 		14883C40212FE58A00871F58 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		14883C42212FE64B00871F58 /* IListNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IListNoteView.swift; sourceTree = "<group>"; };
+		14883C48212FEFBF00871F58 /* NoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 		14883C22212FDF3D00871F58 /* RememberTests */ = {
 			isa = PBXGroup;
 			children = (
-				14883C23212FDF3D00871F58 /* RememberTests.swift */,
+				14883C23212FDF3D00871F58 /* NoteListPresenterTest.swift */,
 				14883C25212FDF3D00871F58 /* Info.plist */,
 			);
 			path = RememberTests;
@@ -125,7 +125,6 @@
 		14883C32212FE07100871F58 /* Common.ios */ = {
 			isa = PBXGroup;
 			children = (
-				14883C33212FE08700871F58 /* IosFlowController.swift */,
 			);
 			path = Common.ios;
 			sourceTree = "<group>";
@@ -152,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				14883C40212FE58A00871F58 /* Note.swift */,
+				14883C48212FEFBF00871F58 /* NoteRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,9 +260,9 @@
 				14883C36212FE10E00871F58 /* IRepository.swift in Sources */,
 				14883C3E212FE54400871F58 /* NoteListPresenter.swift in Sources */,
 				14883C31212FE02B00871F58 /* IFlowController.swift in Sources */,
-				14883C34212FE08700871F58 /* IosFlowController.swift in Sources */,
 				14883C41212FE58A00871F58 /* Note.swift in Sources */,
 				14883C43212FE64B00871F58 /* IListNoteView.swift in Sources */,
+				14883C49212FEFBF00871F58 /* NoteRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14883C24212FDF3D00871F58 /* RememberTests.swift in Sources */,
+				14883C24212FDF3D00871F58 /* NoteListPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,25 +6,34 @@
 //  Copyright © 2018 Le Duy Bach. All rights reserved.
 //
 
-import Foundation
 class ListNotePresenter : RepositoryDelegate<Note> {
-    let repo: IRepository<Note>?
+    typealias idType = String
+    
+    let repo: IRepository<Note, idType>?
     let view: IListNoteView?
-    init(repo: IRepository<Note>, view: IListNoteView?) {
+    let flowController: IFlowController<idType>?
+    
+    init(repo: IRepository<Note, idType>?, view: IListNoteView?, flowController: IFlowController<idType>?) {
         self.repo = repo
         self.view = view
+        self.flowController = flowController
     }
     
     func onViewReady() {
         repo?.loadAllAsync(delegate: self)
     }
     
-    func navigateToAdd() {
-        
-    }
-    
-    func requestDelete(arg: Any?) {
-        // For now make arg: Any?, later we will decide if 
+    func handleRequest(request: NoteRequest<idType>) {
+        let requestType = request.type
+        let itemId = request.itemId
+        switch requestType {
+        case .delete:
+            repo?.deleteAsync(itemId: itemId)
+            break
+        case .edit:
+            flowController?.navigateToAdd(itemToEdit: itemId)
+            break
+        }
     }
     
     override func onDataLoaded(data: [Note]) {
