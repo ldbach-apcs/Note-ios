@@ -1,5 +1,5 @@
 //
-//  IListNoteView.swift
+//  NoteRepository.swift
 //  Remember
 //
 //  Created by CPU12071 on 8/24/18.
@@ -7,7 +7,6 @@
 //
 
 import Foundation
-protocol IListNoteView {
-    func display(data: [Note])
-    func displayError()
+class NoteRepository : IRepository<Note> {
+    
 }

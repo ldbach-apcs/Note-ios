@@ -9,7 +9,7 @@
 import XCTest
 @testable import Remember
 
-class NoteListPresenterTest: XCTestCase {
+class RememberTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

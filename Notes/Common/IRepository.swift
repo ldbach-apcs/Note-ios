@@ -7,10 +7,10 @@
 //
 
 import Foundation
-class IRepository<dataType, idType> {
+class IRepository<dataType> {
     func loadAllAsync(delegate: RepositoryDelegate<dataType>) {}
     func addAsync(item: dataType) {}
-    func deleteAsync(itemId: idType?) {}
+    func deleteAsync(itemId: Double?) {}
 }
 
 class RepositoryDelegate<T> {

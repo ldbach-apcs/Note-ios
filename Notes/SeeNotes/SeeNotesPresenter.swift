@@ -6,14 +6,12 @@
 //  Copyright © 2018 Le Duy Bach. All rights reserved.
 //
 
-class ListNotePresenter : RepositoryDelegate<Note> {
-    typealias idType = String
+class SeeNotesPresenter : RepositoryDelegate<Note> { 
+    let repo: IRepository<Note>?
+    let view: SeeNotesView?
+    let flowController: IFlowController?
     
-    let repo: IRepository<Note, idType>?
-    let view: IListNoteView?
-    let flowController: IFlowController<idType>?
-    
-    init(repo: IRepository<Note, idType>?, view: IListNoteView?, flowController: IFlowController<idType>?) {
+    init(repo: IRepository<Note>?, view: SeeNotesView?, flowController: IFlowController?) {
         self.repo = repo
         self.view = view
         self.flowController = flowController
@@ -23,7 +21,7 @@ class ListNotePresenter : RepositoryDelegate<Note> {
         repo?.loadAllAsync(delegate: self)
     }
     
-    func handleRequest(request: NoteRequest<idType>) {
+    func handleRequest(request: NoteRequest) {
         let requestType = request.type
         let itemId = request.itemId
         switch requestType {

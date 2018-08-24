@@ -6,11 +6,11 @@
 //  Copyright © 2018 Le Duy Bach. All rights reserved.
 //
 
-class NoteRequest<idType> {
+class NoteRequest {
     let type: NoteRequestType
-    let itemId: idType?
+    let itemId: Double?
     
-    init(type: NoteRequestType, itemId: idType?) {
+    init(type: NoteRequestType, itemId: Double?) {
         self.type = type
         self.itemId = itemId
     }
