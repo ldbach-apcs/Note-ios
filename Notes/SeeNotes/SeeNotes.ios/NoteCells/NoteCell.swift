@@ -19,7 +19,7 @@ class NoteCell : UITableViewCell {
     }
     
     // Will set up the `star`
-    func setupSuper() {
+    private func setupSuper() {
         
     }
     

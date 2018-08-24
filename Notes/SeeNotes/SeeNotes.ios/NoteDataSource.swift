@@ -15,11 +15,18 @@ class NoteDataSource : NSObject, UITableViewDataSource {
         self.noteItems = noteItems
     }
     
+    func registerCells(for tableView: UITableView?) {
+        // TODO: call tableView.register() for dequeue later
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return noteItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // TODO: Get item from noteItems[]
+        // Switch item.type
+        // Dequeue, and bind
         return UITableViewCell()
     }
     

@@ -150,10 +150,10 @@
 		14883C37212FE2C400871F58 /* SeeNotes.ios */ = {
 			isa = PBXGroup;
 			children = (
+				14883C5D2130151700871F58 /* NoteCells */,
+				14883C5C213014FD00871F58 /* NoteItems */,
 				14883C502130055100871F58 /* SeeNotesViewController.swift */,
-				14883C562130101700871F58 /* NoteItem.swift */,
 				14883C582130102D00871F58 /* NoteDataSource.swift */,
-				14883C5A2130123E00871F58 /* NoteCell.swift */,
 			);
 			path = SeeNotes.ios;
 			sourceTree = "<group>";
@@ -178,6 +178,22 @@
 				14883C48212FEFBF00871F58 /* NoteRequest.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		14883C5C213014FD00871F58 /* NoteItems */ = {
+			isa = PBXGroup;
+			children = (
+				14883C562130101700871F58 /* NoteItem.swift */,
+			);
+			path = NoteItems;
+			sourceTree = "<group>";
+		};
+		14883C5D2130151700871F58 /* NoteCells */ = {
+			isa = PBXGroup;
+			children = (
+				14883C5A2130123E00871F58 /* NoteCell.swift */,
+			);
+			path = NoteCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

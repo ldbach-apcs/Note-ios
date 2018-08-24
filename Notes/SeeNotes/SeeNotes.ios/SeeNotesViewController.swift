@@ -10,7 +10,8 @@ import UIKit
 
 class SeeNotesViewController: UIViewController, SeeNotesView {
     var presenter: ViewToSeeNotesPresenter?
-    
+    private weak var noteTableView: UITableView?
+
     func setSeeNotesPresenter(presenter: ViewToSeeNotesPresenter?) {
         self.presenter = presenter
     }
@@ -18,6 +19,7 @@ class SeeNotesViewController: UIViewController, SeeNotesView {
     func display(data: [Note]) {
         print("SeeNotesView: \(data)")
         // Convert to NoteItem
+        // let convertedData = NoteItem.convert(from: data)
         // noteDatasource.setData(convertedData)
     }
     
@@ -32,6 +34,7 @@ class SeeNotesViewController: UIViewController, SeeNotesView {
     }
     
     private func setupTableView() {
-        
+        // noteTableView = ...
+        // noteDataSource.registerCell(for: noteTableView)
     }
 }
