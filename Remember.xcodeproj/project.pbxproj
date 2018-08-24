@@ -22,6 +22,9 @@
 		14883C4F212FFB1E00871F58 /* NoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C4E212FFB1E00871F58 /* NoteRepository.swift */; };
 		14883C512130055100871F58 /* SeeNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C502130055100871F58 /* SeeNotesViewController.swift */; };
 		14883C5521300D9900871F58 /* ViewToSeeNotesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C5421300D9900871F58 /* ViewToSeeNotesPresenter.swift */; };
+		14883C572130101700871F58 /* NoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C562130101700871F58 /* NoteItem.swift */; };
+		14883C592130102D00871F58 /* NoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C582130102D00871F58 /* NoteDataSource.swift */; };
+		14883C5B2130123E00871F58 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14883C5A2130123E00871F58 /* NoteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		14883C4E212FFB1E00871F58 /* NoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRepository.swift; sourceTree = "<group>"; };
 		14883C502130055100871F58 /* SeeNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeNotesViewController.swift; sourceTree = "<group>"; };
 		14883C5421300D9900871F58 /* ViewToSeeNotesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToSeeNotesPresenter.swift; sourceTree = "<group>"; };
+		14883C562130101700871F58 /* NoteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItem.swift; sourceTree = "<group>"; };
+		14883C582130102D00871F58 /* NoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataSource.swift; sourceTree = "<group>"; };
+		14883C5A2130123E00871F58 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				14883C502130055100871F58 /* SeeNotesViewController.swift */,
+				14883C562130101700871F58 /* NoteItem.swift */,
+				14883C582130102D00871F58 /* NoteDataSource.swift */,
+				14883C5A2130123E00871F58 /* NoteCell.swift */,
 			);
 			path = SeeNotes.ios;
 			sourceTree = "<group>";
@@ -275,12 +284,15 @@
 				14883C0F212FDF3B00871F58 /* AppDelegate.swift in Sources */,
 				14883C4B212FF43800871F58 /* IOS_FlowController.swift in Sources */,
 				14883C36212FE10E00871F58 /* IRepository.swift in Sources */,
+				14883C592130102D00871F58 /* NoteDataSource.swift in Sources */,
 				14883C3E212FE54400871F58 /* SeeNotesPresenter.swift in Sources */,
 				14883C31212FE02B00871F58 /* IFlowController.swift in Sources */,
+				14883C572130101700871F58 /* NoteItem.swift in Sources */,
 				14883C512130055100871F58 /* SeeNotesViewController.swift in Sources */,
 				14883C4F212FFB1E00871F58 /* NoteRepository.swift in Sources */,
 				14883C41212FE58A00871F58 /* Note.swift in Sources */,
 				14883C4D212FFB1200871F58 /* RepoFactory.swift in Sources */,
+				14883C5B2130123E00871F58 /* NoteCell.swift in Sources */,
 				14883C43212FE64B00871F58 /* SeeNotesView.swift in Sources */,
 				14883C49212FEFBF00871F58 /* NoteRequest.swift in Sources */,
 			);

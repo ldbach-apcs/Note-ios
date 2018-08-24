@@ -17,6 +17,8 @@ class SeeNotesViewController: UIViewController, SeeNotesView {
 
     func display(data: [Note]) {
         print("SeeNotesView: \(data)")
+        // Convert to NoteItem
+        // noteDatasource.setData(convertedData)
     }
     
     func displayError() {
