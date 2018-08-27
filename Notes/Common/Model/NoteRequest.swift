@@ -9,14 +9,17 @@
 class NoteRequest {
     let type: NoteRequestType
     let itemId: Double?
+    let item: Note?
     
-    init(type: NoteRequestType, itemId: Double?) {
+    init(type: NoteRequestType, itemId: Double?, item: Note?) {
         self.type = type
+        self.item = item
         self.itemId = itemId
     }
 }
 
 enum NoteRequestType {
     case edit
+    case add
     case delete
 }

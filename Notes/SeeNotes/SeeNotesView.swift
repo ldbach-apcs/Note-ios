@@ -8,7 +8,9 @@
 
 import Foundation
 protocol SeeNotesView {
-    func setSeeNotesPresenter(presenter: ViewToSeeNotesPresenter?)
+    func addNote(added: Note)
+    func removeNote(id: Double?)
+    func setSeeNotesPresenter(presenter: ViewToPresenterProtocol?)
     func display(data: [Note])
     func displayError()
 }

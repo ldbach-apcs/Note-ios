@@ -6,7 +6,7 @@
 //  Copyright © 2018 Le Duy Bach. All rights reserved.
 //
 
-class SeeNotesPresenter : RepositoryDelegate<Note>, ViewToSeeNotesPresenter { 
+class SeeNotesPresenter : RepositoryDelegate<Note>, ViewToPresenterProtocol { 
     let repo: IRepository<Note>?
     let view: SeeNotesView?
     let flowController: IFlowController?
@@ -31,7 +31,14 @@ class SeeNotesPresenter : RepositoryDelegate<Note>, ViewToSeeNotesPresenter {
         case .edit:
             flowController?.navigateToAdd(itemToEdit: itemId)
             break
+        default:
+            return
         }
+    }
+    
+    func onNewNoteAdded(added: Note, toRemove: Double?) {
+        view?.addNote(added: added)
+        view?.removeNote(id: toRemove)
     }
     
     override func onDataLoaded(data: [Note]) {

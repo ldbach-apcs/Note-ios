@@ -9,7 +9,7 @@
 import Foundation
 class IFlowController {
     func navigateToAdd(itemToEdit id: Double?) {}
-    func navigateToList() {}
+    func navigateToList(newNote: Note, toRemove: Double?) {}
     func run() {}
     
     init() { run() }

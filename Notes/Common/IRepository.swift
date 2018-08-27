@@ -9,11 +9,14 @@
 import Foundation
 class IRepository<dataType> {
     func loadAllAsync(delegate: RepositoryDelegate<dataType>) {}
-    func addAsync(item: dataType) {}
+    func loadSingleAsync(delegate: RepositoryDelegate<dataType>, itemId: Double) {}
+    func addAsync(delegate: RepositoryDelegate<dataType>, item: dataType) {}
     func deleteAsync(itemId: Double?) {}
 }
 
 class RepositoryDelegate<T> {
     func onDataLoaded(data: [T]) { }
-    func onDataError() { }
+    func onSingleDataLoaded(data: T) { }
+    func onDataError() {}
+    func onAddDone(added: Note) {}
 }

@@ -19,6 +19,27 @@ class NoteAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
         self.noteItems = noteItems
     }
     
+    func addNote(added: NoteItem) {
+        noteItems.insert(added, at: 0)
+        uiAddNote()
+    }
+    
+    func removeNote(_ id: Double?) {
+        if id != nil {
+            let index = noteItems.index { it in
+                return it.note.id == id
+            }
+            if index != nil {
+                uiDeleteRow(index: index!)
+            }
+        }
+    }
+    
+    private func uiAddNote() {
+        let insertPath = NSIndexPath(row: 0, section: 0)
+        noteTableView?.insertRows(at: [insertPath as IndexPath], with: .automatic)
+    }
+    
     func registerCells(for tableView: UITableView?, bindTable: Bool) {
         // TODO: call tableView.register() for dequeue later
         tableView?.rowHeight = ROW_HEIGHT

@@ -18,8 +18,9 @@ class NoteRepository : IRepository<Note> {
         delegate.onDataLoaded(data: notes)
     }
     
-    override func addAsync(item: Note) {
+    override func addAsync(delegate: RepositoryDelegate<Note>, item: Note) {
         print("Add called")
+        delegate.onAddDone(added: item)
     }
     
     override func deleteAsync(itemId: Double?) {

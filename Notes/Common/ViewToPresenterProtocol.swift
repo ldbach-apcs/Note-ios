@@ -6,7 +6,7 @@
 //  Copyright © 2018 Le Duy Bach. All rights reserved.
 //
 
-protocol ViewToSeeNotesPresenter {
+protocol ViewToPresenterProtocol {
     func onViewReady()
     func handleRequest(request: NoteRequest)
 }

@@ -9,11 +9,11 @@
 import UIKit
 
 class SeeNotesViewController: UIViewController, SeeNotesView {
-    var presenter: ViewToSeeNotesPresenter?
+    var presenter: ViewToPresenterProtocol?
     private let noteAdapter = NoteAdapter()
     private var noteTableView: UITableView!
 
-    func setSeeNotesPresenter(presenter: ViewToSeeNotesPresenter?) {
+    func setSeeNotesPresenter(presenter: ViewToPresenterProtocol?) {
         self.presenter = presenter
     }
 
@@ -35,6 +35,16 @@ class SeeNotesViewController: UIViewController, SeeNotesView {
         presenter?.onViewReady()
     }
     
+
+    func addNote(added: Note) {
+        let convertedNote = NoteItemConverter.convert(from: added)
+        noteAdapter.addNote(added: convertedNote)
+    }
+    
+    func removeNote(id: Double?) {
+        noteAdapter.removeNote(id)
+    }
+    
     private func setupNavBar() {
         navigationItem.title = "Your notes"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(navigateAdd))
@@ -42,17 +52,17 @@ class SeeNotesViewController: UIViewController, SeeNotesView {
     
     @objc func navigateAdd() {
         // Since Add is clicked, no itemId is sent with the request
-        let request = NoteRequest(type: .edit, itemId: nil)
+        let request = NoteRequest(type: .edit, itemId: nil, item: nil)
         presenter?.handleRequest(request: request)
     }
     
     func navigateEdit(id itemId: Double) {
-        let request = NoteRequest(type: .edit, itemId: itemId)
+        let request = NoteRequest(type: .edit, itemId: itemId, item: nil)
         presenter?.handleRequest(request: request)
     }
     
     func handleDelete(id itemId: Double) {
-        let request = NoteRequest(type: .delete, itemId: itemId)
+        let request = NoteRequest(type: .delete, itemId: itemId, item: nil)
         presenter?.handleRequest(request: request)
     }
     

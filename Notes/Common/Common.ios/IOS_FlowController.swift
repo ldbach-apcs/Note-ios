@@ -12,6 +12,8 @@ class IOS_FlowController : IFlowController {
     private weak var repo: IRepository<Note>?
     private weak var navigationController: UINavigationController?
     
+    private var seeNotesPresenter: SeeNotesPresenter?
+    
     init(window: UIWindow?, repo: IRepository<Note>?) {
         self.window = window
         self.repo = repo
@@ -21,18 +23,22 @@ class IOS_FlowController : IFlowController {
     override func run() {
         super.run()
         let controller: UIViewController & SeeNotesView = SeeNotesViewController()
-        let presenter = SeeNotesPresenter(repo: repo, view: controller, flowController: self)
-        controller.setSeeNotesPresenter(presenter: presenter)
+        seeNotesPresenter = SeeNotesPresenter(repo: repo, view: controller, flowController: self)
+        controller.setSeeNotesPresenter(presenter: seeNotesPresenter!)
         navigationController = UINavigationController(rootViewController: controller)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
     
-    override func navigateToList() {
-        print("IOS: NavigateToList")
+    override func navigateToList(newNote: Note, toRemove: Double?) {
+        seeNotesPresenter?.onNewNoteAdded(added: newNote, toRemove: toRemove)
+        navigationController?.popViewController(animated: true)
     }
     
     override func navigateToAdd(itemToEdit id: Double?) {
-        print("IOS: NavigateToAdd with \(String(describing: id))")
+        let controller: UIViewController & AddNoteView = AddNoteViewController()
+        let presenter = AddNotesPresenter(repo: repo, view: controller, flowController: self, idToLoad: id)
+        controller.setAddNotePresenter(presenter: presenter)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
