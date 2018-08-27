@@ -8,8 +8,11 @@
 
 import Foundation
 class Note {
-    let id : String
-    init(id: String) {
+    let id : Double
+    let isImportant: Bool
+    
+    init(id: Double, isImportant: Bool) {
         self.id = id
+        self.isImportant = isImportant
     }
 }

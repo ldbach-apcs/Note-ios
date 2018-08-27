@@ -33,6 +33,6 @@ class IOS_FlowController : IFlowController {
     }
     
     override func navigateToAdd(itemToEdit id: Double?) {
-        print("IOS: NavigateToAdd")
+        print("IOS: NavigateToAdd with \(String(describing: id))")
     }
 }

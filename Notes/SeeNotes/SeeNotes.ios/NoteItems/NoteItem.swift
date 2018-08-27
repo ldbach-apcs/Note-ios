@@ -14,12 +14,23 @@ protocol NoteItem {
 }
 
 class NoteItemConverter {
-    static func conert(from note: Note) -> NoteItem {
-        fatalError("Not implemented")
+    static func convert(from note: Note) -> NoteItem {
+        if let n = note as? SimpleNote {
+            return SimpleNoteItem(note: n, isImportant: n.isImportant)!
+        } else {
+            fatalError("Unsupported Note type")
+        }
+    }
+    
+    static func convert(from notes: [Note]) -> [NoteItem] {
+        return notes.map { it in
+            return convert(from: it)
+        }
     }
 }
 
 enum NoteItemType {
     case simple
     case titled
+    case error
 }
