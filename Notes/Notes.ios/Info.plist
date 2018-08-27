@@ -39,5 +39,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Add photo to your notes</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save captured photo for your notes</string>
 </dict>
 </plist>

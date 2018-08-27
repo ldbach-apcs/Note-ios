@@ -46,7 +46,6 @@ class NoteAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
         tableView?.register(SimpleNoteCell.self, forCellReuseIdentifier: SIMPLE_NOTE_CELL)
         tableView?.register(TitledNoteCell.self, forCellReuseIdentifier: TITLED_NOTE_CELL)
         
-        
         if bindTable {
             self.noteTableView = tableView
             self.noteTableView?.delegate = self
@@ -65,6 +64,7 @@ class NoteAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
         let itemId = noteItems[index].note.id
+        tableView.deselectRow(at: indexPath, animated: true)
         eventHandler?.navigateEdit(id: itemId)
     }
     
@@ -98,7 +98,9 @@ class NoteAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
         
         switch noteItem.type {
         case .simple:
-            cell = tableView.dequeueReusableCell(withIdentifier: SIMPLE_NOTE_CELL) as? SimpleNoteCell
+            cell = tableView.dequeueReusableCell(withIdentifier: SIMPLE_NOTE_CELL, for: indexPath) as? SimpleNoteCell
+        case .titled:
+            cell = tableView.dequeueReusableCell(withIdentifier: TITLED_NOTE_CELL, for: indexPath) as? TitledNoteCell
         default:
             cell = nil
         }

@@ -15,6 +15,7 @@
             <connections>
                 <outlet property="bodyTextView" destination="zlc-64-Pei" id="YGn-dA-FqE"/>
                 <outlet property="importantButton" destination="jt0-w6-zzu" id="d2y-vv-XZp"/>
+                <outlet property="photoImageView" destination="2yF-3l-ofc" id="43c-Xo-wSV"/>
                 <outlet property="titleTextField" destination="fTE-8z-M24" id="uVw-lK-8nh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,12 +25,16 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="2yF-3l-ofc">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="2yF-3l-ofc">
                     <rect key="frame" x="16" y="28" width="96" height="96"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="2yF-3l-ofc" secondAttribute="height" multiplier="1:1" id="Bh1-1m-Jij"/>
                         <constraint firstAttribute="height" constant="96" id="kxN-vX-lJL"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="W4u-Ga-OWO" appends="YES" id="gNB-bO-mum"/>
+                    </connections>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-8z-M24">
                     <rect key="frame" x="120" y="36" width="184" height="20"/>
@@ -98,6 +103,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="24" y="51"/>
         </view>
+        <tapGestureRecognizer id="W4u-Ga-OWO">
+            <connections>
+                <action selector="photoImageViewTap:" destination="-1" id="FkZ-QP-L35"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="defaultPhoto" width="540" height="540"/>

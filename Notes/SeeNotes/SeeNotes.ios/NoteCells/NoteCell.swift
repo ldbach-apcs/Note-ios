@@ -9,8 +9,8 @@
 import UIKit
 class NoteCell : UITableViewCell {
     
-    static var paddingTopForChild: CGFloat = 0
-    static var paddingBottomForChild: CGFloat = 0
+    static var paddingTopForChild: CGFloat = 16
+    static var paddingBottomForChild: CGFloat = 8
     static var paddingLeftForChild: CGFloat = 16
     static var paddingRightForChild: CGFloat = 0
     static let btnSize = CGSize(width: 32, height: 32)

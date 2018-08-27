@@ -23,6 +23,8 @@ class AddNotesPresenter : RepositoryDelegate<Note>, ViewToPresenterProtocol {
     func onViewReady() {
         if idToLoad != nil {
             repo?.loadSingleAsync(delegate: self, itemId: idToLoad!)
+        } else {
+            view?.displayNote(data: nil)
         }
     }
     

@@ -19,6 +19,6 @@ class TitledNoteItem : NoteItem {
         self.body = note.body ?? ""
         self.note = note
         self.isImportant = note.isImportant
-        self.type = .simple
+        self.type = .titled
     }
 }

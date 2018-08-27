@@ -12,20 +12,23 @@ class Note {
     let isImportant: Bool
     let title: String?
     let body: String?
-    // let image:
+    let imagePath: String?
     
-    init(id: Double, isImportant: Bool, title: String?, body: String?) {
+    init(id: Double, isImportant: Bool, title: String?, body: String?, imagePath: String?) {
         self.id = id
         self.isImportant = isImportant
-        if (title == nil || title?.isEmpty ?? true) {
+        if (title?.isEmpty ?? true) {
             self.title = nil
         } else {
             self.title = title
         }
-        if (body == nil || body?.isEmpty ?? true) {
+        
+        if (body?.isEmpty ?? true) {
             self.body = nil
         } else {
             self.body = body
         }
+        
+        self.imagePath = imagePath
     }
 }
