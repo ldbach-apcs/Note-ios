@@ -8,18 +8,26 @@
 
 import Foundation
 class NoteRepository : IRepository<Note> {
+    var notes = [Note]()
     override func loadAllAsync(delegate: RepositoryDelegate<Note>) {
         // TODO: Make this async?
-        var notes = [Note]()
-        notes.append(SimpleNote(id: 1, content: "Hi", isImportant: false))
-        notes.append(SimpleNote(id: 2, content: "Hello", isImportant: true))
-        notes.append(SimpleNote(id: 3, content: "World", isImportant: true))
-        notes.append(SimpleNote(id: 4, content: "Sigh", isImportant: false))
+        notes.append(Note(id: 1, isImportant: true, title: "Yah", body: nil))
+        notes.append(Note(id: 3, isImportant: true, title: nil, body: "Hel"))
+        notes.append(Note(id: 4, isImportant: false, title: nil, body: "Hello"))
+        notes.append(Note(id: 2, isImportant: true, title: nil, body: nil))
         delegate.onDataLoaded(data: notes)
     }
     
+    override func loadSingleAsync(delegate: RepositoryDelegate<Note>, itemId: Double) {
+        let index = notes.index { it in
+            return it.id == itemId
+        }
+        if index != nil {
+            delegate.onSingleDataLoaded(data: notes[index!])
+        }
+    }
+    
     override func addAsync(delegate: RepositoryDelegate<Note>, item: Note) {
-        print("Add called")
         delegate.onAddDone(added: item)
     }
     

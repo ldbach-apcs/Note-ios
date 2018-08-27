@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class NoteAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
     private let SIMPLE_NOTE_CELL = "SimpleNoteCell"
+    private let TITLED_NOTE_CELL = "TitledNoteCell"
     private let ROW_HEIGHT: CGFloat = 90
     private var noteItems = [NoteItem]()
     private weak var noteTableView: UITableView?
@@ -41,9 +42,10 @@ class NoteAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func registerCells(for tableView: UITableView?, bindTable: Bool) {
-        // TODO: call tableView.register() for dequeue later
         tableView?.rowHeight = ROW_HEIGHT
         tableView?.register(SimpleNoteCell.self, forCellReuseIdentifier: SIMPLE_NOTE_CELL)
+        tableView?.register(TitledNoteCell.self, forCellReuseIdentifier: TITLED_NOTE_CELL)
+        
         
         if bindTable {
             self.noteTableView = tableView

@@ -10,9 +10,22 @@ import Foundation
 class Note {
     let id : Double
     let isImportant: Bool
+    let title: String?
+    let body: String?
+    // let image:
     
-    init(id: Double, isImportant: Bool) {
+    init(id: Double, isImportant: Bool, title: String?, body: String?) {
         self.id = id
         self.isImportant = isImportant
+        if (title == nil || title?.isEmpty ?? true) {
+            self.title = nil
+        } else {
+            self.title = title
+        }
+        if (body == nil || body?.isEmpty ?? true) {
+            self.body = nil
+        } else {
+            self.body = body
+        }
     }
 }

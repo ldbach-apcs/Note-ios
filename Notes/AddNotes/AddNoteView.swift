@@ -9,5 +9,5 @@
 import Foundation
 protocol AddNoteView {
     func setAddNotePresenter(presenter: ViewToPresenterProtocol)
-    func displayNote(data: Note)
+    func displayNote(data: Note?)
 }

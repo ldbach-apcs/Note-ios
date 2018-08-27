@@ -15,11 +15,14 @@ protocol NoteItem {
 
 class NoteItemConverter {
     static func convert(from note: Note) -> NoteItem {
-        if let n = note as? SimpleNote {
-            return SimpleNoteItem(note: n, isImportant: n.isImportant)!
-        } else {
-            fatalError("Unsupported Note type")
+        let emptyTitle = note.title?.isEmpty ?? true
+        let emptyBody = note.body?.isEmpty ?? true
+        
+        if emptyTitle || emptyBody {
+            return SimpleNoteItem(note: note)
         }
+        
+        return TitledNoteItem(note: note)
     }
     
     static func convert(from notes: [Note]) -> [NoteItem] {
