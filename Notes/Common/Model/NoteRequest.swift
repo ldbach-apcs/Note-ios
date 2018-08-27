@@ -8,10 +8,10 @@
 
 class NoteRequest {
     let type: NoteRequestType
-    let itemId: Double?
+    let itemId: Int64?
     let item: Note?
     
-    init(type: NoteRequestType, itemId: Double?, item: Note?) {
+    init(type: NoteRequestType, itemId: Int64?, item: Note?) {
         self.type = type
         self.item = item
         self.itemId = itemId

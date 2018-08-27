@@ -30,12 +30,12 @@ class IOS_FlowController : IFlowController {
         window?.makeKeyAndVisible()
     }
     
-    override func navigateToList(newNote: Note, toRemove: Double?) {
+    override func navigateToList(newNote: Note, toRemove: Int64?) {
         seeNotesPresenter?.onNewNoteAdded(added: newNote, toRemove: toRemove)
         navigationController?.popViewController(animated: true)
     }
     
-    override func navigateToAdd(itemToEdit id: Double?) {
+    override func navigateToAdd(itemToEdit id: Int64?) {
         let controller: UIViewController & AddNoteView = AddNoteViewController()
         let presenter = AddNotesPresenter(repo: repo, view: controller, flowController: self, idToLoad: id)
         controller.setAddNotePresenter(presenter: presenter)

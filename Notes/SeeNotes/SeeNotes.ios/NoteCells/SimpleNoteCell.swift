@@ -30,7 +30,7 @@ class SimpleNoteCell : NoteCell {
     override func setupViews() {
         addSubview(contentLabel)
         
-        let topConstraint = NSLayoutConstraint(item: contentLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: NoteCell.paddingTopForChild)
+        let topConstraint = NSLayoutConstraint(item: contentLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 8)
         let bottomConstraint = NSLayoutConstraint(item: contentLabel, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: NoteCell.paddingBottomForChild)
         let leftConstraint = NSLayoutConstraint(item: contentLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: NoteCell.paddingLeftForChild)
         let rightConstraint = NSLayoutConstraint(item: contentLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -1.0 * NoteCell.paddingRightForChild)

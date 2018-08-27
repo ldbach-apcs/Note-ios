@@ -12,7 +12,7 @@ class AddNoteViewController: UIViewController,
     AddNoteView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private var presenter: ViewToPresenterProtocol?
-    private var idToUse: Double = -1
+    private var idToUse: Int64 = -1
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var importantButton: UIButton!
@@ -25,6 +25,7 @@ class AddNoteViewController: UIViewController,
     }
     
     func displayNote(data: Note?) {
+        print("Display note: \(String(describing: data?.imagePath))")
         titleTextField.text = data?.title ?? ""
         bodyTextView.text = data?.body ?? ""
         importantButton.isSelected = data?.isImportant ?? false
@@ -36,7 +37,9 @@ class AddNoteViewController: UIViewController,
     }
     
     private func loadImageIntoImageView(path: String) {
-        
+        let fullPath = getDocumentsDirectory().path + "/\(path)"
+        let image = UIImage(named: fullPath)
+        photoImageView.image = image
     }
     
     private func generateImagePath() -> String? {
@@ -94,11 +97,10 @@ class AddNoteViewController: UIViewController,
         // TODO: Save selected image to a custom path and load pass it here
         let path = generateImagePath()
         saveImageToPath(path: path!)
-        if idToUse == -1.0 {
+        if idToUse == -1 {
             idToUse = Util.getTimeStamp()
         }
-        
-        return Note(id: 12, isImportant: important, title: title, body: body, imagePath: path)
+        return Note(id: idToUse, isImportant: important, title: title, body: body, imagePath: path)
     }
     
     private func saveImageToPath(path: String?) {
@@ -108,6 +110,7 @@ class AddNoteViewController: UIViewController,
         
         if let data = UIImagePNGRepresentation(photoImageView.image!) {
             let filename = getDocumentsDirectory().appendingPathComponent(path!)
+            print("Trying to save image: \(data) \(filename)")
             try? data.write(to: filename)
         }
     }

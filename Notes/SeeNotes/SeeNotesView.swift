@@ -9,7 +9,7 @@
 import Foundation
 protocol SeeNotesView {
     func addNote(added: Note)
-    func removeNote(id: Double?)
+    func removeNote(id: Int64?)
     func setSeeNotesPresenter(presenter: ViewToPresenterProtocol?)
     func display(data: [Note])
     func displayError()

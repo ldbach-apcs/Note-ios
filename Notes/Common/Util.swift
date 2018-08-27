@@ -8,8 +8,7 @@
 
 import Foundation
 class Util {
-    static func getTimeStamp() -> Double {
-       // let a = Int64(NSDate().timeIntervalSince1970 * 1000)
-        return -1.0
+    static func getTimeStamp() -> Int64 {
+       return Int64(NSDate().timeIntervalSince1970 * 1000)
     }
 }

@@ -9,9 +9,13 @@
 import Foundation
 import UIKit
 class NoteAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
+    private let ROW_HEIGHT: CGFloat = 90
+    
     private let SIMPLE_NOTE_CELL = "SimpleNoteCell"
     private let TITLED_NOTE_CELL = "TitledNoteCell"
-    private let ROW_HEIGHT: CGFloat = 90
+    private let IMAGE_NOTE_CELL = "ImagedNoteCell"
+    private let TITLED_IMAGE_NOTE_CELL = "TitledImageNoteCell"
+    
     private var noteItems = [NoteItem]()
     private weak var noteTableView: UITableView?
     var eventHandler: SeeNotesViewController?
@@ -25,7 +29,7 @@ class NoteAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
         uiAddNote()
     }
     
-    func removeNote(_ id: Double?) {
+    func removeNote(_ id: Int64?) {
         if id != nil {
             let index = noteItems.index { it in
                 return it.note.id == id
@@ -45,6 +49,8 @@ class NoteAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
         tableView?.rowHeight = ROW_HEIGHT
         tableView?.register(SimpleNoteCell.self, forCellReuseIdentifier: SIMPLE_NOTE_CELL)
         tableView?.register(TitledNoteCell.self, forCellReuseIdentifier: TITLED_NOTE_CELL)
+        tableView?.register(ImagedNoteCell.self, forCellReuseIdentifier: IMAGE_NOTE_CELL)
+        tableView?.register(TitledImagedNoteCell.self, forCellReuseIdentifier: TITLED_IMAGE_NOTE_CELL)
         
         if bindTable {
             self.noteTableView = tableView
@@ -90,7 +96,7 @@ class NoteAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
         noteTableView?.deleteRows(at: [removePath as IndexPath], with: .automatic)
     }
     
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
         let noteItem = noteItems[index]
@@ -98,9 +104,21 @@ class NoteAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
         
         switch noteItem.type {
         case .simple:
-            cell = tableView.dequeueReusableCell(withIdentifier: SIMPLE_NOTE_CELL, for: indexPath) as? SimpleNoteCell
+            cell =
+                tableView.dequeueReusableCell(withIdentifier: SIMPLE_NOTE_CELL, for: indexPath)
+                as? SimpleNoteCell
         case .titled:
-            cell = tableView.dequeueReusableCell(withIdentifier: TITLED_NOTE_CELL, for: indexPath) as? TitledNoteCell
+            cell =
+                tableView.dequeueReusableCell(withIdentifier: TITLED_NOTE_CELL, for: indexPath)
+                as? TitledNoteCell
+        case .imaged:
+            cell =
+                tableView.dequeueReusableCell(withIdentifier: IMAGE_NOTE_CELL, for: indexPath)
+                as? ImagedNoteCell
+        case .titledImaged:
+            cell =
+                tableView.dequeueReusableCell(withIdentifier: TITLED_IMAGE_NOTE_CELL, for: indexPath)
+                as? TitledImagedNoteCell
         default:
             cell = nil
         }

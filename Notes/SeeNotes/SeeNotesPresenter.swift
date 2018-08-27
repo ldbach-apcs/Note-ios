@@ -36,7 +36,7 @@ class SeeNotesPresenter : RepositoryDelegate<Note>, ViewToPresenterProtocol {
         }
     }
     
-    func onNewNoteAdded(added: Note, toRemove: Double?) {
+    func onNewNoteAdded(added: Note, toRemove: Int64?) {
         view?.addNote(added: added)
         view?.removeNote(id: toRemove)
     }

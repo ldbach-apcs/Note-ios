@@ -8,13 +8,13 @@
 
 import Foundation
 class Note {
-    let id : Double
+    let id : Int64
     let isImportant: Bool
     let title: String?
     let body: String?
     let imagePath: String?
     
-    init(id: Double, isImportant: Bool, title: String?, body: String?, imagePath: String?) {
+    init(id: Int64, isImportant: Bool, title: String?, body: String?, imagePath: String?) {
         self.id = id
         self.isImportant = isImportant
         if (title?.isEmpty ?? true) {

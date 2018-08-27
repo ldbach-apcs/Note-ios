@@ -41,7 +41,7 @@ class SeeNotesViewController: UIViewController, SeeNotesView {
         noteAdapter.addNote(added: convertedNote)
     }
     
-    func removeNote(id: Double?) {
+    func removeNote(id: Int64?) {
         noteAdapter.removeNote(id)
     }
     
@@ -56,12 +56,12 @@ class SeeNotesViewController: UIViewController, SeeNotesView {
         presenter?.handleRequest(request: request)
     }
     
-    func navigateEdit(id itemId: Double) {
+    func navigateEdit(id itemId: Int64) {
         let request = NoteRequest(type: .edit, itemId: itemId, item: nil)
         presenter?.handleRequest(request: request)
     }
     
-    func handleDelete(id itemId: Double) {
+    func handleDelete(id itemId: Int64) {
         let request = NoteRequest(type: .delete, itemId: itemId, item: nil)
         presenter?.handleRequest(request: request)
     }

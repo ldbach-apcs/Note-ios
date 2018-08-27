@@ -8,8 +8,8 @@
 
 import Foundation
 class IFlowController {
-    func navigateToAdd(itemToEdit id: Double?) {}
-    func navigateToList(newNote: Note, toRemove: Double?) {}
+    func navigateToAdd(itemToEdit id: Int64?) {}
+    func navigateToList(newNote: Note, toRemove: Int64?) {}
     func run() {}
     
     init() { run() }

@@ -11,9 +11,9 @@ class AddNotesPresenter : RepositoryDelegate<Note>, ViewToPresenterProtocol {
     let repo: IRepository<Note>?
     let view: AddNoteView?
     let flowController: IFlowController?
-    let idToLoad: Double?
+    let idToLoad: Int64?
     
-    init(repo: IRepository<Note>?, view: AddNoteView?, flowController: IFlowController?, idToLoad: Double?) {
+    init(repo: IRepository<Note>?, view: AddNoteView?, flowController: IFlowController?, idToLoad: Int64?) {
         self.repo = repo
         self.view = view
         self.flowController = flowController

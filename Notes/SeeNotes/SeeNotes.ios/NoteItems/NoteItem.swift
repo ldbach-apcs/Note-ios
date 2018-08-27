@@ -17,12 +17,21 @@ class NoteItemConverter {
     static func convert(from note: Note) -> NoteItem {
         let emptyTitle = note.title?.isEmpty ?? true
         let emptyBody = note.body?.isEmpty ?? true
+        let emptyImagePath = note.imagePath?.isEmpty ?? true
         
         if emptyTitle || emptyBody {
-            return SimpleNoteItem(note: note)
+            if emptyImagePath {
+                return SimpleNoteItem(note: note)
+            } else {
+                return ImagedNoteItem(note: note)
+            }
         }
         
-        return TitledNoteItem(note: note)
+        if emptyImagePath {
+            return TitledNoteItem(note: note)
+        } else  {
+            return TitledImagedNoteItem(note: note)
+        } 
     }
     
     static func convert(from notes: [Note]) -> [NoteItem] {
@@ -35,5 +44,7 @@ class NoteItemConverter {
 enum NoteItemType {
     case simple
     case titled
+    case imaged
+    case titledImaged
     case error
 }

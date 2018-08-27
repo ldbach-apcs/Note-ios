@@ -16,6 +16,11 @@ class NoteCell : UITableViewCell {
     static let btnSize = CGSize(width: 32, height: 32)
     static let cellHeight: CGFloat = 90
     
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
     let starButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
